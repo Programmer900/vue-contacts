@@ -12,7 +12,7 @@ const router = new VueRouter({
       path: '/',
       name: 'Home',
       meta: { layout: 'main', auth: true },
-      component: () => import('../views/Home.vue')
+      component: () => import('../components/app/Home.vue')
     },
     {
       path: '/auth',

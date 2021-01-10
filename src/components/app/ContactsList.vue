@@ -1,8 +1,15 @@
 <template>
     <div class="create-contact">
         <md-content class="md-scrollbar block-content">
+            <div v-if="contacts.length">
+                <md-field>
+                    <label>Найти контакт</label>
+                    <span class="md-prefix"><md-icon>search</md-icon></span>
+                    <md-input v-model="searchContact"></md-input>
+                </md-field>
+            </div>
             <md-list v-if="contacts.length" class="md-double-line">
-                <md-list-item v-for="contact in contacts" :key="contact.id">
+                <md-list-item v-for="contact in onSearchContact" :key="contact.id">
                     <div class="md-list-item-text">
                         <span>{{contact.phone}}</span>
                         <span>{{contact.address}}</span>
@@ -38,7 +45,8 @@
     data() {
       return {
         statusDialog: false,
-        current: null
+        current: null,
+        searchContact: ''
       }
     },
     props: {
@@ -74,7 +82,14 @@
         }
       }
     },
-    mounted() {}
+    computed: {
+      onSearchContact() {
+        console.log(this.contacts)
+        return this.contacts.filter(c => {
+          return c.address.toLowerCase.indexOf(this.searchContact.toLowerCase) > -1 || c.phone.indexOf(this.searchContact) > -1
+        })
+      }
+    }
   }
 </script>
 

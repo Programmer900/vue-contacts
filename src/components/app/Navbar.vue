@@ -16,7 +16,6 @@
     data() {
       return ({
         links: [
-          /*{title: 'Home', url: '/', exact: true},*/
           {title: 'Log in as a different user', url: '/auth'}
         ],
         topPosition: 'md-top-left',
@@ -35,7 +34,6 @@
       }, 1000)
     },
     beforeDestroy() {
-      console.log('BeforeDestroy')
       clearInterval(this.interval)
     }
   }

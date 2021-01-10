@@ -20,7 +20,7 @@
                                     <md-input
                                             type="phone"
                                             name="phone" id="phone" autocomplete="phone"
-                                            v-model.trim.number="form.phone"
+                                            v-model.trim="form.phone"
                                             :disabled="sending"
                                             :class="{invalid:
                                             ($v.form.phone.$dirty && !$v.form.phone.required) ||
