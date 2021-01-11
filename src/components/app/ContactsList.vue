@@ -86,7 +86,7 @@
       onSearchContact() {
         console.log(this.contacts)
         return this.contacts.filter(c => {
-          return c.address.toLowerCase.indexOf(this.searchContact.toLowerCase) > -1 || c.phone.indexOf(this.searchContact) > -1
+          return c.address.indexOf(this.searchContact) > -1 || c.phone.indexOf(this.searchContact) > -1
         })
       }
     }
