@@ -10,7 +10,7 @@
                     <div class="md-layout md-gutter">
                         <div class="md-layout-item md-small-size-100">
                             <md-field :class="getValidationClass('phone')">
-                                <label for="email">Phone</label>
+                                <label for="phone">Phone</label>
                                 <md-input
                                         type="phone"
                                         name="phone" id="phone" autocomplete="phone"
